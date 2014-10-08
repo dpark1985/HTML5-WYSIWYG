@@ -8,16 +8,47 @@
     rel="stylesheet">
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
     rel="stylesheet">
-	
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.mainHeader{
+			position: relative;
+			height: 40px;
+			width: 100%;
+			
+			background-color: black;
+		}
+		.headerLeft{
+			float:left;
+		}
+		.left{
+			float: left;
+			margin-left: 5px;
+		}
+		.vDivider{
+			float: left;
+			display: block;
+			width: 1px;
+			height: 20px;
+			background-color: white;
+		}
+		.projectName{
+			color: white;
+		}
+		
+		
+	</style>
 </head>
 <body>
-	<header>
+	<header class="mainHeader">
 		<div id="headerLeft" class="headerLeft">
-			<span></span><!-- Glyphicon -->
-			<span></span><!-- Vertical Divider -->
-			<span></span><!-- Project Title -->
-			<span></span><!-- Glyphicon -->
-			<span></span><!-- Glyphicon -->
+			<a><span class="glyphicon glyphicon-circle-arrow-left left"></span></a><!-- Glyphicon -->
+			<span class="vDivider left"></span><!-- Vertical Divider -->
+			<span class="projectName left">Project Name</span><!-- Project Title -->
+			<a><span class="glyphicon glyphicon-save left"></span></a><!-- Glyphicon -->
+			<a><span class="glyphicon glyphicon-new-window left"></span></a><!-- Glyphicon -->
 		</div>
 		<div id="headerRight" class="headerRight">
 			<div></div><!-- Radio Button -->
