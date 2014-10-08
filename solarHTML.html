@@ -14,21 +14,28 @@
 			margin: 0;
 		}
 		.glyphicon{
-			font-size: 1.2em;
+			font-size: 1.4em;
 		}
 		.mainHeader{
 			position: relative;
-			height: 40px;
+			height: 60px;
 			width: 100%;
-			vertical-align: bottom;
+			padding-top: 10px;
 			background-color: black;
 		}
 		.headerLeft{
-			 background-color:yellow; 
+		
+		
 		}
 		.left{
 			float: left;
 			margin-left: 5px;
+			margin-right: 5px;
+		}
+		.right{
+			float: right;
+			margin-left: 5px;
+			margin-right: 5px;
 		}
 		.vDivider{
 			float: left;
@@ -43,7 +50,28 @@
 		
 		
 	</style>
+	
+	
+	<script src="jquery-2.1.1/jquery-2.1.1.js"></script>
+	<script src="bootstrap-3.2.0-dist/js/bootstrap.js"></script>
+	
+	
+	<script>
+		$(document).ready(function(){
+			$('#accountInfo').click(function(){
+				menuWidth();
+			});
+		});
 
+	</script>
+	
+	<script>
+		function menuWidth(){
+			var width = $('#accountInfo').width();
+			$('.dropdown-menu').width(width);
+		}
+	</script>
+	
 </head>
 <body>
 	<header class="mainHeader">
@@ -54,10 +82,22 @@
 			<a><span class="glyphicon glyphicon-save left"></span></a><!-- Glyphicon -->
 			<a><span class="glyphicon glyphicon-new-window left"></span></a><!-- Glyphicon -->
 		</div>
-		<div id="headerRight" class="headerRight">
+		<div id="headerRight" class="headerRight right">
 			<div></div><!-- Radio Button -->
 			<div></div><!-- Device Size Dropdown Menu-->
-			<div></div><!-- User Account Dropdown Menu-->
+			<span class="vDivider right"></span><!-- Vertical Divider -->
+			<div id="accountInfo" class="btn-group right"><!-- User Account Dropdown Menu-->
+				<a href="" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+					<span class="glyphicon glyphicon-user left"></span>
+					<span class="left">Hello, Daniel</span>
+					<span class="caret left"></span>
+				</a>
+				<ul class="dropdown-menu" role="menu">
+					<li><a href=""><span class="glyphicon glyphicon-cog"></span><span>Account Settings</span></a></li>
+					<li><a href=""><span class="glyphicon glyphicon-flag"></span><span>Help &#38; Feedback</span></a></li>
+					<li><a href=""><span class="glyphicon glyphicon-log-out"></span><span>Logout</span></a></li>
+				</ul>
+			</div><!-- User Account Dropdown Menu-->
 		</div>
 	</header>
 	
@@ -126,11 +166,7 @@
 	</section>
 	
 	
-<!----------------------------- Script ----------------------------->
-<!------------------------------------------------------------------------
-	Bootstrap, JQuery
-------------------------------------------------------------------------->
-	<script src="https://code.jquery.com/jquery-2.1.1.js"></script>
-	<script src="bootstrap-3.2.0-dist/js/bootstrap.js"></script>
+
+
 </body>
 </html>
