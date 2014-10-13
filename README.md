@@ -15,5 +15,3 @@ HTML5 WYSIWYG Editor
 	2. Marketing
 	3. Sales
 	4. Venture Capital
-	
-# Testing
