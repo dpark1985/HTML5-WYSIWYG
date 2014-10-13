@@ -12,46 +12,86 @@
 			padding: 0;
 			margin: 0;
 		}
-		.left{float: left;}
-		.right{float: right;}
 		divider{
 			display: line-block;
 			line-height: 30px;
 			height: 20px;
 			width: 1px;
-			margin-top: 5px;
+			margin-top: 10px;
 			background-color: white;
 			float: left;
+		}
+		.glyphicon{
+			margin-top: 10px;
+			font-size: 1.2em;
+		}
+		.btn{
+			line-height: 20px;
+		}
+		.marginLeft5{
+			float: left;
+			margin-left: 5px;		
+			margin-right: 5px;
 		}
 	</style>
 	
 	<!-- Header -->
 	<style> 
 		.mainHeader{
-			height: 30px;
+			height: 40px;
 			width: 100%;
 			background: black;
 			overflow: hidden;
 		}
-		.mainHeader > div > a{
-			display: block;
-			line-height: 30px;
-			width: 30px;
-			text-align: center;
-			background-color: red;
+		.mainHeader > .left{
 			float: left;
 		}
-		.mainHeader > div > span{
+		.mainHeader > .right{
+			float: right;
+		}
+		.mainHeader > .right > div{
+			margin-top: 3px;
+		}
+		.mainHeader > .right > .accountInfo{
+			padding: 0;
+			margin: 0;
+		}
+		.mainHeader > .right > .accountInfo > a{
 			display: block;
-			line-height: 30px;
+			line-height: 40px;
+			width: 40px;
+			text-align: center;
+			background-color: red;
+			float: left;	
+		}
+		.mainHeader > .right > .accountInfo > .glyphicon{
+			display: block;
 			text-align: center;
 			color: white;
 			float: left;
-			background-color: blue;
 		}
-		.marginLeft5{
-			margin-left: 5px;		
+		.mainHeader > .right > .accountInfo > .name{
+			display: block;
+			line-height: 40px;
+			text-align: center;
+			color: white;
+			float: left;
 		}
+		.mainHeader > div > a{
+			display: block;
+			line-height: 40px;
+			text-align: center;
+			color: white;
+			float: left;
+		}
+		.mainHeader > div > .projectName{
+			display: block;
+			line-height: 40px;
+			text-align: center;
+			color: white;
+			float: left;
+		}
+		
 		
 		
 	</style>
@@ -83,13 +123,34 @@
 			<a href="#" class="marginLeft5"><span class="glyphicon glyphicon-circle-arrow-left"></span></a>
 			<divider class="divider marginLeft5"></divider>
 			<span class="projectName marginLeft5">Project Name</span>
-			<a href="#" class="marginLeft5"><span class="glyphicon glyphicon-save marginLeft5"></span></a>
-			<a href="#" class="marginLeft5"><span class="glyphicon glyphicon-new-window marginLeft5"></span></a>
+			<a href="#" class="marginLeft5"><span class="glyphicon glyphicon-save"></span></a>
+			<a href="#" class="marginLeft5"><span class="glyphicon glyphicon-new-window"></span></a>
 		</div>
 			
 		<div class="right">
-			<a href="#"></a>
+			<div class="btn-group marginLeft5">
+		 		<button type="button" class="btn btn-default">Build</button>
+		  		<button type="button" class="btn btn-default">Test</button>
+			</div>
+			<divider class="divider marginLeft5"></divider>
+			<a href="#" class="marginLeft5">a</a>
+			<divider class="divider marginLeft5"></divider>
+			<div class="accountInfo marginLeft5 btn-group">
+				<button type="button" class=""btn btn-default dropdown-toggle" data-toggle="dropdown"></button>
+					<span class="glyphicon glyphicon-user marginLeft5"></span>
+					<span class="name marginLeft5">Hello, Daniel Park</span>
+				</button>
+				<ul class="dropdown-menu" role="menu">
+					<li><a href="#">Action</a></li>
+				    <li><a href="#">Another action</a></li>
+				    <li><a href="#">Something else here</a></li>
+				</ul>
+			</div>
 		</div>
+		
+	
+		
+		
 	</header>
 
 
