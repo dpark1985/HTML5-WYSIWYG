@@ -2,9 +2,11 @@
 <html>
 
 <head>
-	<title>Solar HTML5 WYSIWYG Editor</title>
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="bootstrap-3.2.0-dist/css/bootstrap.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<title>Solar HTML5 WYSIWYG Editor</title>
 
 	<!-- Initialization and Common -->
 	<style> 
@@ -12,18 +14,21 @@
 			padding: 0;
 			margin: 0;
 		}
+		a{
+			text-decoration: none;
+		}
 		divider{
 			display: line-block;
 			line-height: 30px;
 			height: 20px;
 			width: 1px;
 			margin-top: 10px;
-			background-color: white;
+			background-color: #cccc9f;
 			float: left;
 		}
 		.glyphicon{
-			margin-top: 10px;
 			font-size: 1.2em;
+			color: #cccc9f;
 		}
 		.btn{
 			line-height: 20px;
@@ -40,45 +45,60 @@
 		.mainHeader{
 			height: 40px;
 			width: 100%;
-			background: black;
-			overflow: hidden;
+			background: #33332d;
+
 		}
+		.mainHeader > .left  > .projectName{
+			display: block;
+			line-height: 40px;
+			text-align: center;
+			color: #cccc9f;
+			float: left;
+		}
+		
 		.mainHeader > .left{
 			float: left;
 		}
 		.mainHeader > .right{
 			float: right;
 		}
-		.mainHeader > .right > div{
+		.mainHeader > .right > .btn-group{
 			margin-top: 3px;
 		}
-		.mainHeader > .right > .accountInfo{
-			padding: 0;
-			margin: 0;
-		}
-		.mainHeader > .right > .accountInfo > a{
-			display: block;
-			line-height: 40px;
-			width: 40px;
-			text-align: center;
-			background-color: red;
-			float: left;	
-		}
-
-		.mainHeader > div > a{
+		.mainHeader > .right > .dropdown{
 			display: block;
 			line-height: 40px;
 			text-align: center;
 			color: white;
 			float: left;
 		}
-		.mainHeader > div > .projectName{
+		.mainHeader > .left > a{
 			display: block;
 			line-height: 40px;
 			text-align: center;
-			color: white;
+			text-decoration: none;
 			float: left;
 		}
+		.mainHeader > .left > a:hover{
+			color: #fff8e3;
+		}
+		.mainHeader > .right > a{
+			display: block;
+			line-height: 40px;
+			text-align: center;
+			text-decoration: none;
+			float: left;
+		}
+		.mainHeader > .right > a:hover{
+			color: #fff8e3;
+		}
+		.mainHeader > .right > .dropdown > #dLabel > .glyphicon{
+			line-height: 40px;
+			text-align: center;
+			text-decoration: none;
+			float: left;
+		}
+		
 		
 		
 		
@@ -99,42 +119,45 @@
 		
 	</style>
 	
-	
-	<script src="jquery-2.1.1/jquery-2.1.1.js"></script>
-	<script src="bootstrap-3.2.0-dist/js/bootstrap.js"></script>
+
 	
 
 </head>
 <body>
 	<header class="mainHeader">
 		<div class="left">
-			<a href="#" class="marginLeft5"><span class="glyphicon glyphicon-circle-arrow-left"></span></a>
+			<a href="#" class="glyphicon glyphicon-circle-arrow-left marginLeft5"></a>
 			<divider class="divider marginLeft5"></divider>
 			<span class="projectName marginLeft5">Project Name</span>
-			<a href="#" class="marginLeft5"><span class="glyphicon glyphicon-save"></span></a>
-			<a href="#" class="marginLeft5"><span class="glyphicon glyphicon-new-window"></span></a>
+			<a href="#" class="glyphicon glyphicon-save marginLeft5"></a>
+			<a href="#" class="glyphicon glyphicon-new-window marginLeft5"></a>
 		</div>
 			
-		<div class="right">
-			<div class="btn-group marginLeft5">
-		 		<button type="button" class="btn btn-default">Build</button>
-		  		<button type="button" class="btn btn-default">Test</button>
-			</div>
+		<div class="right">	
+			<div class="btn-group marginLeft5" data-toggle="buttons">
+				<label class="btn btn-primary active">
+					<input type="radio" name="options" id="option1" checked> Build
+				</label>
+				<label class="btn btn-primary">
+					<input type="radio" name="options" id="option2"> Test
+				</label>
+			</div>			
+			
 			<divider class="divider marginLeft5"></divider>
-			<a href="#" class="marginLeft5">a</a>
+			<a href="#" class="glyphicon glyphicon-phone marginLeft5"></a>
 			<divider class="divider marginLeft5"></divider>
-			<div class="btn-group">
-			  	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-			    Action <span class="caret"></span>
-			  	</button>
-				<ul class="dropdown-menu" role="menu">
-				    <li><a href="#">Action</a></li>
-				    <li><a href="#">Another action</a></li>
-				    <li><a href="#">Something else here</a></li>
-				    <li class="divider"></li>
-				    <li><a href="#">Separated link</a></li>
+
+			<div class="dropdown marginLeft5">
+				<a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="#">
+				  <span class="glyphicon glyphicon-user marginLeft5"></span><span class="marginLeft5">Account Info</span></span> <span class="caret"></span>
+				</a>
+				<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+					<li><a href="#">Account Settings</a></li>
+					<li><a href="#">Help &#38; FeedBack</a></li>
+					<li><a href="#">Logout</a></li>
 				</ul>
 			</div>
+
 		</div>
 		
 	
@@ -143,6 +166,9 @@
 	</header>
 
 
-
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
 </html>
