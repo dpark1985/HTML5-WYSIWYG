@@ -64,19 +64,7 @@
 			background-color: red;
 			float: left;	
 		}
-		.mainHeader > .right > .accountInfo > .glyphicon{
-			display: block;
-			text-align: center;
-			color: white;
-			float: left;
-		}
-		.mainHeader > .right > .accountInfo > .name{
-			display: block;
-			line-height: 40px;
-			text-align: center;
-			color: white;
-			float: left;
-		}
+
 		.mainHeader > div > a{
 			display: block;
 			line-height: 40px;
@@ -135,15 +123,16 @@
 			<divider class="divider marginLeft5"></divider>
 			<a href="#" class="marginLeft5">a</a>
 			<divider class="divider marginLeft5"></divider>
-			<div class="accountInfo marginLeft5 btn-group">
-				<button type="button" class=""btn btn-default dropdown-toggle" data-toggle="dropdown"></button>
-					<span class="glyphicon glyphicon-user marginLeft5"></span>
-					<span class="name marginLeft5">Hello, Daniel Park</span>
-				</button>
+			<div class="btn-group">
+			  	<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+			    Action <span class="caret"></span>
+			  	</button>
 				<ul class="dropdown-menu" role="menu">
-					<li><a href="#">Action</a></li>
+				    <li><a href="#">Action</a></li>
 				    <li><a href="#">Another action</a></li>
 				    <li><a href="#">Something else here</a></li>
+				    <li class="divider"></li>
+				    <li><a href="#">Separated link</a></li>
 				</ul>
 			</div>
 		</div>
