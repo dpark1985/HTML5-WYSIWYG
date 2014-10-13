@@ -45,6 +45,7 @@
 		.mainHeader{
 			height: 40px;
 			width: 100%;
+			border-bottom: 2px solid black;
 			background: #33332d;
 
 		}
@@ -55,7 +56,6 @@
 			color: #cccc9f;
 			float: left;
 		}
-		
 		.mainHeader > .left{
 			float: left;
 		}
@@ -69,7 +69,6 @@
 			display: block;
 			line-height: 40px;
 			text-align: center;
-			color: white;
 			float: left;
 		}
 		.mainHeader > .left > a{
@@ -98,20 +97,70 @@
 			text-decoration: none;
 			float: left;
 		}
-		
-		
-		
-		
+	</style>
+	
+	<!-- Main Content -->
+	<style>
+		.mainContent{
+			padding: 0;
+			margin: 0;
+			width: 100%;
+			overflow: hidden;
+			float: left;
+		}
+		.viewTitle{
+			width: 100%;
+			height: 20px;
+			border-bottom: 1px solid black;
+			color: #cccc9f;
+		}
+		.viewContent{
+			width: 100%;
+			background-color: #fff8e3;
+		}
+		.leftHideShowBtn{
+			width: 10px;
+			height: 20px;
+			background-color: blue;
+			
+			float: left;
+		}
+		.rightHideShowBtn{
+			width: 10px;
+			height: 20px;
+			background-color: blue;
+			float: right;
+		}
 	</style>
 	
 	<!-- Left Menu -->
 	<style> 
-		
+		.mainContent > .leftMenu{
+			width: 250px;
+			height: 100%;
+			border-right: 2px solid black;
+			background-color: #33332d;
+			float: left;
+		}
+		.mainContent > .leftMenu > .projectExplorer{
+			width: 100%;
+			border-bottom: 1px solid black;
+		}
 	</style>
 	
 	<!-- Right Menu -->
 	<style> 
-		
+		.mainContent > .rightMenu{
+			width: 250px;
+			height: 100%;
+			border-left: 2px solid black;
+			background-color: #33332d;
+			float: right;
+		}
+		.mainContent > .rightMenu > .propertyView{
+			width: 100%;
+			border-bottom: 1px solid black;
+		}
 	</style>
 	
 	<!-- Main Content -->
@@ -119,6 +168,50 @@
 		
 	</style>
 	
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			var hide = false;
+			initHeight();
+			$(window).resize(function(){
+				initHeight();
+			})
+			
+			
+			// Test Need
+			$('.leftHideShowBtn').click(function(){	
+				alert('clicked');
+				if(hide == false){
+					alert('hide');
+					$('#leftMenu').removeClass('.leftMenu');
+					hide = true;
+				}else{
+					$('#leftMenu').addClass('.leftMenu');
+					hide = false;
+				}
+				
+			});
+			
+		});
+		
+	</script>
+	
+	<script>
+		function initHeight(){
+			var height = $(document).height() - 40;
+			var halfHeight = height/2;
+			$('.mainContent').height(height);
+			$('.projectExplorer').height(halfHeight);
+			$('.propertyView').height(halfHeight);
+			$('.viewContent').height(halfHeight-20);
+			$('.leftHideShowBtn').css("margin-top", halfHeight);
+			$('.rightHideShowBtn').css("margin-top", halfHeight);
+		}
+		
+		
+		
+		
+	</script>
 
 	
 
@@ -158,16 +251,64 @@
 				</ul>
 			</div>
 
-		</div>
-		
+		</div>		
+	</header>
+	
+	<div class="mainContent">
+		<aside id="leftMenu" class="leftMenu">
+			<div class="projectExplorer">
+				<div class="viewTitle">Project Explorer</div>
+				<div class="viewContent">
+				
+				</div>
+				
+				
+			</div>
+			<div class="paletteView">
+				<div class="viewTitle">Components</div>
+				<div class="viewContent">
+				
+				</div>
+			
+			</div>
+			
+		</aside>
+		<div class="leftHideShowBtn"></div>
+	
 	
 		
+		<section>
 		
-	</header>
+		</section>
+	
+	
+	
+		
+		<aside id="rightMenu" class="rightMenu">
+			<div class="propertyView">
+				<div class="viewTitle">Properties</div>
+				<div class="viewContent">
+				
+				</div>
+				
+			</div>
+			<div class="outlineView">
+				<div class="viewTitle">Outline</div>
+				<div class="viewContent">
+				
+				</div>
+				
+			</div>
+			
+		</aside>
+		<div class="rightHideShowBtn"></div>
+	</div>
+
+	
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
