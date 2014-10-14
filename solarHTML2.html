@@ -177,20 +177,27 @@
 				initHeight();
 			})
 			
-			
-			// Test Need
+
 			$('.leftHideShowBtn').click(function(){	
-				alert('clicked');
 				if(hide == false){
-					alert('hide');
-					$('#leftMenu').removeClass('.leftMenu');
+					$('#leftMenu').hide();
 					hide = true;
 				}else{
-					$('#leftMenu').addClass('.leftMenu');
+					$('#leftMenu').show();
 					hide = false;
 				}
-				
 			});
+			
+			$('.rightHideShowBtn').click(function(){	
+				if(hide == false){
+					$('#rightMenu').hide();
+					hide = true;
+				}else{
+					$('#rightMenu').show();
+					hide = false;
+				}
+			});
+			
 			
 		});
 		
